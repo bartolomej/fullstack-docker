@@ -1,0 +1,9 @@
+.emojiCardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.emojiCardContainer .emoji {
+    font-size: 100px;
+}

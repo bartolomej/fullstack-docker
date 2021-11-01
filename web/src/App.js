@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from "react";
+import { getRandomEmoji } from "./api";
+import { EmojiCard } from "./EmojiCard";
 
 function App() {
+  const [emoji, setEmoji] = useState();
+
+  useEffect(() => {
+    let interval = setInterval(async () => {
+      setEmoji(await getRandomEmoji());
+    }, 2000)
+    return () => clearInterval(interval);
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="appContainer">
+      <EmojiCard emoji={emoji} />
     </div>
   );
 }

@@ -1,4 +1,8 @@
-const API_HOST = process.env.API_HOST || 'http://localhost:3000';
+const API_HOST = process.env.REACT_APP_API_HOST;
+
+if (!API_HOST) {
+  console.error("REACT_APP_API_HOST env variable not set!")
+}
 
 function request(path, method = "GET") {
   return fetch(`${API_HOST}${path}`, {

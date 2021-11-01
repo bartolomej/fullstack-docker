@@ -1,1 +1,3 @@
-/data/certbot
+/server/certbot
+.DS_Store
+.idea

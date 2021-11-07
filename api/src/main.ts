@@ -5,9 +5,10 @@ const port = parseInt(process.env.PORT);
 
 async function bootstrap() {
   if (!port) {
-    throw new Error('PORT env variable not set!');
+    console.error('PORT env variable not set!');
   }
   const app = await NestFactory.create(AppModule);
+  app.setGlobalPrefix('/api');
   app.enableCors();
   await app.listen(port);
 }

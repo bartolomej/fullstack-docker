@@ -5,7 +5,7 @@ if (!API_HOST) {
 }
 
 function request(path, method = "GET") {
-  return fetch(`${API_HOST}${path}`, {
+  return fetch(`${API_HOST}/api${path}`, {
     method
   }).then(res => res.json())
 }

@@ -1,0 +1,23 @@
+{
+  "name": "fullstack-docker",
+  "version": "1.0.0",
+  "description": "This is an example full stack app, that is completely portable, thanks to Docker.",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "docker-compose up -d",
+    "start:prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bartolomej/nginx-certbot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bartolomej/nginx-certbot/issues"
+  },
+  "homepage": "https://github.com/bartolomej/nginx-certbot#readme",
+  "dependencies": {
+    "lerna": "^4.0.0"
+  }
+}
